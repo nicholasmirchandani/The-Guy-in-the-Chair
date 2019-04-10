@@ -60,7 +60,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EnemyChase.cs" />
     <Compile Include="Assets\HackingScript.cs" />
+    <Compile Include="Assets\PlayerKill.cs" />
     <Compile Include="Assets\TileClicking.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/nicho/Desktop/Git Projects/The-Guy-in-the-Chair/The Guy in the Chair/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
