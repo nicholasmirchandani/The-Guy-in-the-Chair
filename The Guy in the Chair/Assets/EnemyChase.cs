@@ -7,8 +7,8 @@ public class EnemyChase : MonoBehaviour
 {
     public GameObject tracker;
     private GameObject player;
+    private bool searchForPlayer;
     public IAstarAI ai;
-    private int lookTimer = 0;
 
     private void Start()
     {
@@ -17,15 +17,39 @@ public class EnemyChase : MonoBehaviour
 
     private void Update()
     {
-
+        if(searchForPlayer)
+        {
+            tracker.transform.position = player.transform.position;
+            ai.SearchPath();
+        }
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if(col.tag.Equals("Player"))
+        if(Time.frameCount % 5 == 0)
         {
-            tracker.transform.position = col.transform.position;
-            ai.SearchPath();
+            if (col.tag.Equals("Player"))
+            {
+                tracker.transform.position = col.transform.position;
+                ai.SearchPath();
+
+            }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag.Equals("Player"))
+        {
+            searchForPlayer = true;
+            player = collision.gameObject;
+            StartCoroutine("LosePlayer");
+        }
+    }
+
+    IEnumerator LosePlayer()
+    {
+        yield return new WaitForSeconds(0.5f);
+        searchForPlayer = false;
     }
 }
