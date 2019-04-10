@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Pathfinding;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -9,11 +10,15 @@ public class TileClicking : MonoBehaviour
 
     Grid m_level;
     Tilemap m_TileMap;
+    public GameObject tracker;
+    public GameObject player;
+    IAstarAI ai;
 
     void Start()
     {
         m_level = GetComponentInParent<Grid>();
         m_TileMap = GetComponent<Tilemap>();
+        ai = player.GetComponent<IAstarAI>();
     }
 
     // Update is called once per frame
@@ -28,9 +33,22 @@ public class TileClicking : MonoBehaviour
 
             if (tile != null)
             {
-                Debug.Log("Tile Name: " + tile.name);
-                m_TileMap.SetTile(position, null);
+                if(tile.name.Equals("BIGFLOOR_STANDIN"))
+                {
+                    tracker.SetActive(true);
+                    tracker.transform.position = position + new Vector3(0.5f,0.5f,-5);
+                    ai.SearchPath();
+                }
+                else
+                {
+                    tracker.SetActive(false);
+                }
             }
+        }
+
+        if (ai.reachedDestination)
+        {
+            tracker.SetActive(false);
         }
     }
 }
