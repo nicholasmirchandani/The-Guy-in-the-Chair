@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - AI
-  - 
+  - Interactable
   - 
   - 
   - 
@@ -40,4 +40,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: HideyHole
+    uniqueID: 1746471055
     locked: 0

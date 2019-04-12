@@ -10,17 +10,27 @@ public class EnemyChase : MonoBehaviour
     private bool searchForPlayer;
     public IAstarAI ai;
 
+    public Transform[] patrolPoints;
+    private int currentPatrolIndex;
+    private Transform currentPatrolPoint;
+
     private void Start()
     {
         ai = GetComponent<IAstarAI>();
+        currentPatrolIndex = 0;
     }
 
     private void Update()
     {
-        if(searchForPlayer)
+        if(searchForPlayer && !player.GetComponent<PlayerManager>().isHidden && ai.reachedEndOfPath)
         {
-            tracker.transform.position = player.transform.position;
-            ai.SearchPath();
+            Debug.Log("OOF");
+            //Some sort of searching script
+        }
+        else if (transform.position == tracker.transform.position)
+        {
+            NextPatrolPoint();
+            Debug.Log("NEXT!");
         }
     }
 
@@ -28,8 +38,9 @@ public class EnemyChase : MonoBehaviour
     {
         if(Time.frameCount % 5 == 0)
         {
-            if (col.tag.Equals("Player"))
+            if (col.tag.Equals("Player") && !col.GetComponent<PlayerManager>().isHidden)
             {
+                ++GameManager.Instance.chaosLevel;
                 tracker.transform.position = col.transform.position;
                 ai.SearchPath();
 
@@ -51,5 +62,19 @@ public class EnemyChase : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         searchForPlayer = false;
+        NextPatrolPoint();
     }
+
+    public void NextPatrolPoint()
+    {
+        currentPatrolPoint = patrolPoints[currentPatrolIndex];
+        ++currentPatrolIndex;
+        if (currentPatrolIndex > patrolPoints.Length - 1)
+        {
+            currentPatrolIndex = 0;
+        }
+        tracker.transform.position = currentPatrolPoint.position;
+        ai.SearchPath();
+    }
+
 }

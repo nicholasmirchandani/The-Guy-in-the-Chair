@@ -501,4 +501,5 @@ namespace Pathfinding {
 			return base.OnUpgradeSerializedData(version, unityThread);
 		}
 	}
+
 }
