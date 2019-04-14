@@ -85,6 +85,7 @@ public class EnemyChase : MonoBehaviour
     {
         if (collision.tag.Equals("Player") && wasTrackingPlayer)
         {
+            Debug.Log("Player Exit!");
             searchForPlayer = true;
             player = collision.gameObject;
                 if (!losingPlayer)
