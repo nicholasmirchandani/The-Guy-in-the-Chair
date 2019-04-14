@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public int chaosLevel = 0;
+
+    public double chaosLevel = 0;
+    public double chaosDefense = 1;
     public int electricityLevel = 10;
     public int wadesCount = 0;
 
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
         {
             chaosLevel = 100;
             Debug.Log("GAME OVER: You've been caught :(");
+            //Game Over
         }
     }
 }

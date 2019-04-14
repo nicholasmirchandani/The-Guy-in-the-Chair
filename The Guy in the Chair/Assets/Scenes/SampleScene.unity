@@ -2187,6 +2187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaosLevel: 0
+  chaosDefense: 1
   electricityLevel: 0
   wadesCount: 0
 --- !u!1001 &1821876100
@@ -2300,6 +2301,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2048260494}
+    - target: {fileID: 221061200, guid: e8cc31efa96131a4f8ddd858fb7a0e25, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db55ebdb9473a4a80a0037f64aafccce, type: 2}
+    - target: {fileID: 2109410249, guid: e8cc31efa96131a4f8ddd858fb7a0e25, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db55ebdb9473a4a80a0037f64aafccce, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8cc31efa96131a4f8ddd858fb7a0e25, type: 3}
 --- !u!4 &1821876101 stripped

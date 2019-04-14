@@ -9,6 +9,7 @@ public class PlayerKill : MonoBehaviour
         if(collision.gameObject.tag.Equals("Player"))
         {
             Debug.Log("GAME OVER: PLAYER DED!");
+            //Game Over
         }
     }
 }

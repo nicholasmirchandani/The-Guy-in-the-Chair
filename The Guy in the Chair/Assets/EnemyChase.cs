@@ -18,6 +18,7 @@ public class EnemyChase : MonoBehaviour
     {
         ai = GetComponent<IAstarAI>();
         currentPatrolIndex = 0;
+        searchForPlayer = false;
     }
 
     private void Update()
@@ -40,10 +41,21 @@ public class EnemyChase : MonoBehaviour
         {
             if (col.tag.Equals("Player") && !col.GetComponent<PlayerManager>().isHidden)
             {
-                ++GameManager.Instance.chaosLevel;
+                GameManager.Instance.chaosLevel += 1/GameManager.Instance.chaosDefense;
                 tracker.transform.position = col.transform.position;
                 ai.SearchPath();
-
+            }
+            else if (col.tag.Equals("Player") && !searchForPlayer) //If the player is hidden but they never left the guard's line of sight
+            {
+                Debug.Log("I GOTCHA BITCH");
+                //Game Over
+            }
+            else if(col.tag.Equals("Player"))
+            { 
+                Debug.Log("Tracker: " + tracker.transform.position);
+                Debug.Log("Player: " + col.transform.position);
+                //If not already losingPlayer
+                StartCoroutine("LosePlayer");
             }
         }
     }
@@ -54,15 +66,18 @@ public class EnemyChase : MonoBehaviour
         {
             searchForPlayer = true;
             player = collision.gameObject;
+            //If not already losingPlayer
             StartCoroutine("LosePlayer");
         }
     }
 
     IEnumerator LosePlayer()
     {
-        yield return new WaitForSeconds(0.5f);
+        Debug.Log("Losing Player");
+        yield return new WaitForSeconds(3f);
         searchForPlayer = false;
         NextPatrolPoint();
+        Debug.Log("Player Lost");
     }
 
     public void NextPatrolPoint()
