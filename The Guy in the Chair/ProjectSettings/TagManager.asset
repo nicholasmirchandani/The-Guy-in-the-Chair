@@ -15,9 +15,9 @@ TagManager:
   - 
   - AI
   - Interactable
-  - 
-  - 
-  - 
+  - Floor
+  - Wall
+  - Player
   - 
   - 
   - 
