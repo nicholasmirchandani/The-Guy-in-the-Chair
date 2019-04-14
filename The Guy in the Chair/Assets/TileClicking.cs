@@ -24,7 +24,12 @@ public class TileClicking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (ai.reachedDestination)
+        {
+            tracker.SetActive(false);
+        }
+
+        if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Vector3 worldPoint = ray.GetPoint(-ray.origin.z / ray.direction.z);
@@ -33,10 +38,10 @@ public class TileClicking : MonoBehaviour
 
             if (tile != null)
             {
-                if(tile.name.Equals("BIGFLOOR_STANDIN"))
+                if (tile.name.Equals("BIGFLOOR_STANDIN"))
                 {
                     tracker.SetActive(true);
-                    tracker.transform.position = position + new Vector3(0.5f,0.5f,-5);
+                    tracker.transform.position = position + new Vector3(0.5f, 0.5f, -5);
                     ai.SearchPath();
                 }
                 else
@@ -45,10 +50,11 @@ public class TileClicking : MonoBehaviour
                 }
             }
         }
+    }
 
-        if (ai.reachedDestination)
-        {
-            tracker.SetActive(false);
-        }
+    //Optimization: Only call onMouseOver if mouse is over tilemap
+    void OnMouseOver()
+    {
+        
     }
 }

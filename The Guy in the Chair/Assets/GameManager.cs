@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         if(chaosLevel >= 100)
         {
-            chaosLevel = 100;
+            chaosLevel = 0;
             Debug.Log("GAME OVER: Chaos Level too High :(");
             SceneManager.LoadScene("GameOver");
             //Game Over

@@ -25,7 +25,10 @@ public class EnemyChase : MonoBehaviour
 
     private void Update()
     {
-        if(searchForPlayer && !player.GetComponent<PlayerManager>().isHidden && ai.reachedEndOfPath)
+        Debug.Log(transform.position);
+        Debug.Log("Tracker: " + tracker.transform.position);
+
+        if (searchForPlayer && !player.GetComponent<PlayerManager>().isHidden && ai.reachedEndOfPath)
         {
             Debug.Log("OOF");
             //Some sort of searching script
@@ -41,11 +44,15 @@ public class EnemyChase : MonoBehaviour
     {
         if(Time.frameCount % 5 == 0)
         {
+           
             if (col.tag.Equals("Player") && !col.GetComponent<PlayerManager>().isHidden)
             {
-                GameManager.Instance.chaosLevel += 1/GameManager.Instance.chaosDefense;
-                tracker.transform.position = col.transform.position;
-                ai.SearchPath();
+                //Debug.DrawRay(transform.position, col.transform.position - transform.position);
+                //RaycastHit2D hit = Physics2D.Raycast(transform.position, col.transform.position - transform.position); //Testing if the player is behind a wall
+
+                GameManager.Instance.chaosLevel += 1 / GameManager.Instance.chaosDefense;
+                    tracker.transform.position = col.transform.position;
+                    ai.SearchPath();
             }
             else if (col.tag.Equals("Player") && !searchForPlayer) //If the player is hidden but they never left the guard's line of sight
             {
