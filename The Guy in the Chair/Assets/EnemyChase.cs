@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.SceneManagement;
 
 public class EnemyChase : MonoBehaviour
 {
     public GameObject tracker;
     private GameObject player;
     private bool searchForPlayer;
+    private bool losingPlayer = false;
     public IAstarAI ai;
 
     public Transform[] patrolPoints;
@@ -47,15 +49,18 @@ public class EnemyChase : MonoBehaviour
             }
             else if (col.tag.Equals("Player") && !searchForPlayer) //If the player is hidden but they never left the guard's line of sight
             {
-                Debug.Log("I GOTCHA BITCH");
+                Debug.Log("Game Over: Player tried to hide in front of guard"); //TODO: Animations to make this make more sense.  You're not supposed to be able to run into and out of cover quiclky or easily
+                SceneManager.LoadScene("GameOver");
                 //Game Over
             }
             else if(col.tag.Equals("Player"))
             { 
                 Debug.Log("Tracker: " + tracker.transform.position);
                 Debug.Log("Player: " + col.transform.position);
-                //If not already losingPlayer
-                StartCoroutine("LosePlayer");
+                if(!losingPlayer)
+                {
+                    StartCoroutine("LosePlayer");
+                }
             }
         }
     }
@@ -66,18 +71,22 @@ public class EnemyChase : MonoBehaviour
         {
             searchForPlayer = true;
             player = collision.gameObject;
-            //If not already losingPlayer
-            StartCoroutine("LosePlayer");
+                if (!losingPlayer)
+                {
+                    StartCoroutine("LosePlayer");
+                }
+            }
         }
-    }
 
     IEnumerator LosePlayer()
     {
+        losingPlayer = true;
         Debug.Log("Losing Player");
         yield return new WaitForSeconds(3f);
         searchForPlayer = false;
         NextPatrolPoint();
         Debug.Log("Player Lost");
+        losingPlayer = false;
     }
 
     public void NextPatrolPoint()

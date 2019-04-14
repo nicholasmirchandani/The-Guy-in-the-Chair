@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,7 +28,8 @@ public class GameManager : MonoBehaviour
         if(chaosLevel >= 100)
         {
             chaosLevel = 100;
-            Debug.Log("GAME OVER: You've been caught :(");
+            Debug.Log("GAME OVER: Chaos Level too High :(");
+            SceneManager.LoadScene("GameOver");
             //Game Over
         }
     }
