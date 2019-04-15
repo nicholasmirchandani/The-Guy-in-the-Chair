@@ -19,8 +19,6 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public IAstarAI playerAI;
     public GameObject tracker;
-    public GameObject cameraObject;
-    public Camera gameCamera { get; set; }
 
     [SerializeField] public Grid grid;
     [SerializeField] public Tilemap tilemap;
@@ -34,7 +32,6 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         playerAI = player.GetComponent<IAstarAI>();
-        gameCamera = cameraObject.GetComponent<Camera>();
     }
 
     // Update is called once per frame
