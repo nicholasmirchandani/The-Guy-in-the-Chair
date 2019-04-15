@@ -9,6 +9,8 @@ public class PlayerKill : MonoBehaviour
     {
         if(collision.gameObject.tag.Equals("Player"))
         {
+            Debug.Log(gameObject.name);
+            Debug.Log(collision.name);
             Debug.Log("GAME OVER: Player killed by Guard!");
             SceneManager.LoadScene("GameOver");
             //Game Over

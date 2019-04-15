@@ -462,8 +462,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0921483d0d7325043aa12687af7914e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tracker: {fileID: 1620765901}
-  player: {fileID: 1410287202}
 --- !u!19719996 &540815918
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -2492,11 +2490,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1821876101, guid: e8cc31efa96131a4f8ddd858fb7a0e25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5426497
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 1821876101, guid: e8cc31efa96131a4f8ddd858fb7a0e25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5426499
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1821876101, guid: e8cc31efa96131a4f8ddd858fb7a0e25, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2783,7 +2781,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048260493}
   m_LocalRotation: {x: -0, y: -0, z: 0.70710677, w: -0.7071068}
-  m_LocalPosition: {x: -4.5426497, y: 1.5426499, z: 0}
+  m_LocalPosition: {x: -4.5, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 470016801}

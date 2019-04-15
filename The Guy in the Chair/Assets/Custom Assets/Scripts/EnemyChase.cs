@@ -60,8 +60,9 @@ public class EnemyChase : MonoBehaviour
                         tracker.transform.position = col.transform.position;
                         ai.SearchPath();
                         wasTrackingPlayer = true;
+                        GetComponent<AILerp>().speed = 3;
                     }
-                    else if (col.GetComponent<PlayerManager>().isHidden && !searchForPlayer) //If the player is hidden but they never left the guard's line of sight
+                    else if (col.GetComponent<PlayerManager>().isHidden && wasTrackingPlayer) //If the player is hidden but they never left the guard's line of sight
                     {
                         Debug.Log("Game Over: Player tried to hide in front of guard"); //TODO: Animations to make this make more sense.  You're not supposed to be able to run into and out of cover quiclky or easily
                         SceneManager.LoadScene("GameOver");
@@ -85,8 +86,8 @@ public class EnemyChase : MonoBehaviour
     {
         if (collision.tag.Equals("Player") && wasTrackingPlayer)
         {
-            Debug.Log("Player Exit!");
             searchForPlayer = true;
+            Debug.Log("Player Exit!");
             player = collision.gameObject;
                 if (!losingPlayer)
                 {
@@ -109,6 +110,7 @@ public class EnemyChase : MonoBehaviour
 
     public void NextPatrolPoint()
     {
+        GetComponent<AILerp>().speed = 2;
         currentPatrolPoint = patrolPoints[currentPatrolIndex];
         ++currentPatrolIndex;
         if (currentPatrolIndex > patrolPoints.Length - 1)

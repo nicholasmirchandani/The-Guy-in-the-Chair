@@ -67,6 +67,7 @@
     <Compile Include="Assets\Custom Assets\Scripts\PlayerKill.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\TileClicking.cs" />
+    <Compile Include="Assets\WinGame.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/nicho/Desktop/Git Projects/The-Guy-in-the-Chair/The Guy in the Chair/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

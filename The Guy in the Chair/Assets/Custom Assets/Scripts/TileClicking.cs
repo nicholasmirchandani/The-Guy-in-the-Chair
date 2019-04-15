@@ -33,17 +33,15 @@ public class TileClicking : MonoBehaviour
 
             if (tile != null)
             {
-                if (tile.name.Equals("BIGFLOOR_STANDIN"))
-                {
                     GameManager.Instance.tracker.SetActive(true);
                     GameManager.Instance.tracker.transform.position = position + new Vector3(0.5f, 0.5f, -5);
                     GameManager.Instance.playerAI.SearchPath();
-                }
-                else
-                {
-                    GameManager.Instance.tracker.SetActive(false);
-                }
             }
+            else
+            {
+                GameManager.Instance.tracker.SetActive(false);
+            }
+  
         }
     }
 }
