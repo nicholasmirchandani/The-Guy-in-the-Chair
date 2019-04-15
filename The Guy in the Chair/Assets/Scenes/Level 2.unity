@@ -330,12 +330,12 @@ PrefabInstance:
     - target: {fileID: 7172579868257989351, guid: e8cc31efa96131a4f8ddd858fb7a0e25,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7172579868128409885, guid: e8cc31efa96131a4f8ddd858fb7a0e25,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8cc31efa96131a4f8ddd858fb7a0e25, type: 3}
@@ -2906,6 +2906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHidden: 0
+  isTracking: 0
 --- !u!1 &1430603789
 GameObject:
   m_ObjectHideFlags: 0
@@ -4679,6 +4680,7 @@ MonoBehaviour:
   wadesCount: 0
   player: {fileID: 1410287202}
   tracker: {fileID: 1620765901}
+  cameraObject: {fileID: 519420028}
   grid: {fileID: 1466820281}
   tilemap: {fileID: 899944451}
 --- !u!1001 &1853086071
@@ -4763,12 +4765,12 @@ PrefabInstance:
     - target: {fileID: 7172579868257989351, guid: e8cc31efa96131a4f8ddd858fb7a0e25,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7172579868128409885, guid: e8cc31efa96131a4f8ddd858fb7a0e25,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

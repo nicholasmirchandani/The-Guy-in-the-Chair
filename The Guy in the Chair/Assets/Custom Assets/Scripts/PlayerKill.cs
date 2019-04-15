@@ -16,7 +16,19 @@ public class PlayerKill : MonoBehaviour
             }
             else
             {
-                Destroy(this.gameObject.transform.parent.gameObject);
+                Destroy(this.gameObject.transform.parent.gameObject); //TODO: Change to drop a body behind
+                Debug.Log("Guard Killed By Player!");
+                
+                
+                //Stop going after the enemy after you kill them
+                if (PlayerManager.Instance.isTracking)
+                {
+                    PlayerManager.Instance.isTracking = false;
+                    GameManager.Instance.tracker.transform.parent = null;
+                    GameManager.Instance.tracker.SetActive(false);
+                }
+
+                GameManager.Instance.chaosLevel += 20 / GameManager.Instance.chaosDefense;
             }
             //Game Over
         }

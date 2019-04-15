@@ -28,6 +28,13 @@ public class WinGame : MonoBehaviour
             Vector3 worldPoint = ray.GetPoint(-ray.origin.z / ray.direction.z);
             Vector3Int position = GameManager.Instance.grid.WorldToCell(worldPoint);
 
+            //Stop going after an enemy if you click off them
+            if (PlayerManager.Instance.isTracking)
+            {
+                PlayerManager.Instance.isTracking = false;
+                GameManager.Instance.tracker.transform.parent = null;
+            }
+
             GameManager.Instance.tracker.SetActive(true);
             GameManager.Instance.tracker.transform.position = position + new Vector3(0.5f, 0.5f, -5);
             GameManager.Instance.playerAI.SearchPath();

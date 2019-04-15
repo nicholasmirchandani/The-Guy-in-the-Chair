@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 1821876105}
   - component: {fileID: 1821876104}
   - component: {fileID: 7172579868496191000}
-  - component: {fileID: 7172579868496190995}
+  - component: {fileID: 1335191072}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -222,7 +222,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7172579868496190995
+--- !u!114 &1335191072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 7172579868257989351}
   - component: {fileID: 7172579868257989350}
   - component: {fileID: 7172579868257989349}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: DeathBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7172579868257989352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1821876101}
