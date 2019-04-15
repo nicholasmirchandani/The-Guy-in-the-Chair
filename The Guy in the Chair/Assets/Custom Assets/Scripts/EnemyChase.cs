@@ -10,7 +10,7 @@ public class EnemyChase : MonoBehaviour
     private GameObject player;
     private bool searchForPlayer;
     private bool losingPlayer = false;
-    private bool wasTrackingPlayer = false;
+    public bool wasTrackingPlayer = false;
     public IAstarAI ai;
 
     public Transform[] patrolPoints;

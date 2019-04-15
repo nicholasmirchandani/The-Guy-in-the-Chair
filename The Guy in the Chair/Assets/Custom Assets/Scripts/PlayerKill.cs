@@ -9,10 +9,15 @@ public class PlayerKill : MonoBehaviour
     {
         if(collision.gameObject.tag.Equals("Player"))
         {
-            Debug.Log(gameObject.name);
-            Debug.Log(collision.name);
-            Debug.Log("GAME OVER: Player killed by Guard!");
-            SceneManager.LoadScene("GameOver");
+            if(GetComponentInParent<EnemyChase>().wasTrackingPlayer)
+            {
+                Debug.Log("GAME OVER: Player killed by Guard!");
+                SceneManager.LoadScene("GameOver");
+            }
+            else
+            {
+                Destroy(this.gameObject.transform.parent.gameObject);
+            }
             //Game Over
         }
     }
