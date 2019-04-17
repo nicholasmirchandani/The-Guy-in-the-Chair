@@ -75,7 +75,11 @@ public class EnemyChase : MonoBehaviour
                             StartCoroutine("LosePlayer");
                         }
                     }
-                }     
+                }
+                else
+                {
+                    wasTrackingPlayer = false;
+                }
             }
 
             
@@ -93,8 +97,9 @@ public class EnemyChase : MonoBehaviour
                 {
                     StartCoroutine("LosePlayer");
                 }
-            }
+            wasTrackingPlayer = false;
         }
+    }
 
     IEnumerator LosePlayer()
     {
