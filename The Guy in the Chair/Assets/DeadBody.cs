@@ -10,10 +10,24 @@ public class DeadBody : MonoBehaviour
         {
             if(!PlayerManager.Instance.isCarryingBody)
             {
-                Debug.Log("Move the body");
-                PlayerManager.Instance.isCarryingBody = true;
-                PlayerManager.Instance.bodyBeingCarried = this.gameObject;
-                PlayerManager.Instance.bodyBeingCarried.transform.parent = GameManager.Instance.player.transform;
+
+
+                //Get to the body
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Vector3 worldPoint = ray.GetPoint(-ray.origin.z / ray.direction.z);
+                Vector3Int position = GameManager.Instance.grid.WorldToCell(worldPoint);
+                GameManager.Instance.tracker.SetActive(true);
+                GameManager.Instance.tracker.transform.position = position + new Vector3(0.5f, 0.5f, -5);
+                GameManager.Instance.playerAI.SearchPath();
+
+                Debug.Log(GameManager.Instance.playerAI.reachedEndOfPath); //When this is true && the player is within range to pick up enemy, unless interrputed, execute the following code.  Use events?
+                
+                    Debug.Log("Move the body");
+                    PlayerManager.Instance.isCarryingBody = true;
+                    PlayerManager.Instance.bodyBeingCarried = this.gameObject;
+                    PlayerManager.Instance.bodyBeingCarried.transform.parent = GameManager.Instance.player.transform;
+                    this.transform.position = PlayerManager.Instance.transform.position;
+                
 
             }
         }
