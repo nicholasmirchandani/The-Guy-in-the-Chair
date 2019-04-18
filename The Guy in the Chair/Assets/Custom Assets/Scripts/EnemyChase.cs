@@ -11,6 +11,7 @@ public class EnemyChase : MonoBehaviour
     private bool searchForPlayer;
     private bool losingPlayer = false;
     public bool wasTrackingPlayer = false;
+    private bool isTrackingPlayer = false;
     public IAstarAI ai;
 
     public Transform[] patrolPoints;
@@ -60,15 +61,16 @@ public class EnemyChase : MonoBehaviour
                         tracker.transform.position = col.transform.position;
                         ai.SearchPath();
                         wasTrackingPlayer = true;
+                        isTrackingPlayer = true;
                         GetComponent<AILerp>().speed = 3;
                     }
-                    else if (col.GetComponent<PlayerManager>().isHidden && wasTrackingPlayer) //If the player is hidden but they never left the guard's line of sight
+                    else if (col.GetComponent<PlayerManager>().isHidden && isTrackingPlayer) //If the player is hidden but they never left the guard's line of sight
                     {
                         Debug.Log("Game Over: Player tried to hide in front of guard"); //TODO: Animations to make this make more sense.  You're not supposed to be able to run into and out of cover quiclky or easily
                         SceneManager.LoadScene("GameOver");
                         //Game Over
                     }
-                    else if (wasTrackingPlayer)
+                    else if (isTrackingPlayer)
                     {
                         if (!losingPlayer)
                         {
@@ -78,7 +80,7 @@ public class EnemyChase : MonoBehaviour
                 }
                 else
                 {
-                    wasTrackingPlayer = false;
+                    isTrackingPlayer = false;
                 }
             }
 
@@ -88,7 +90,7 @@ public class EnemyChase : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag.Equals("Player") && wasTrackingPlayer)
+        if (collision.tag.Equals("Player") && isTrackingPlayer)
         {
             searchForPlayer = true;
             Debug.Log("Player Exit!");
@@ -97,7 +99,7 @@ public class EnemyChase : MonoBehaviour
                 {
                     StartCoroutine("LosePlayer");
                 }
-            wasTrackingPlayer = false;
+            isTrackingPlayer = false;
         }
     }
 
@@ -111,6 +113,7 @@ public class EnemyChase : MonoBehaviour
         Debug.Log("Player Lost");
         losingPlayer = false;
         wasTrackingPlayer = false;
+        isTrackingPlayer = false;
     }
 
     public void NextPatrolPoint()
