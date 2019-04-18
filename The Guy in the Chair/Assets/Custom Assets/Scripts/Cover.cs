@@ -67,7 +67,7 @@ public class Cover : MonoBehaviour
                 holdingBody = true;
                 PlayerManager.Instance.bodyBeingCarried.transform.parent = this.gameObject.transform;
                 this.bodyBeingCarried = PlayerManager.Instance.bodyBeingCarried;
-                this.bodyBeingCarried.transform.position = this.gameObject.transform.position; //TODO: Add throwing animation
+                this.bodyBeingCarried.transform.position = this.gameObject.transform.position + new Vector3(0, 0, 0.5f); //TODO: Add throwing animation
                 PlayerManager.Instance.bodyBeingCarried = null;
                 Debug.Log("Throwing body into cover");
                 //Throw body into cover
