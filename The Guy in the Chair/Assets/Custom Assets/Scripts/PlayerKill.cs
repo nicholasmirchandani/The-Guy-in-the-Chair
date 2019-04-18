@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerKill : MonoBehaviour
 {
+    public GameObject bodyPrefab;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag.Equals("Player"))
@@ -16,6 +17,7 @@ public class PlayerKill : MonoBehaviour
             }
             else
             {
+                Instantiate(bodyPrefab, this.gameObject.transform.parent.transform.position + new Vector3(0,0,0.5f), Quaternion.identity);
                 Destroy(this.gameObject.transform.parent.gameObject); //TODO: Change to drop a body behind
                 Debug.Log("Guard Killed By Player!");
                 

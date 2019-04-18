@@ -8,6 +8,8 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Instance;
     public bool isHidden;
     public bool isTracking; //is tracking enemy for stealth kill
+    public bool isCarryingBody;
+    public GameObject bodyBeingCarried;
 
     void Start()
     {
