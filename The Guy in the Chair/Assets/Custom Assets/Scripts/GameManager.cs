@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public IAstarAI playerAI;
     public GameObject tracker;
+    public Camera levelCamera;
 
     [SerializeField] public Grid grid;
     [SerializeField] public Tilemap tilemap;

@@ -26,7 +26,7 @@ public class StealthKill : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             //Charge the enemy
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = GameManager.Instance.levelCamera.ScreenPointToRay(Input.mousePosition);
             Vector3 worldPoint = ray.GetPoint(-ray.origin.z / ray.direction.z);
             Vector3Int position = GameManager.Instance.grid.WorldToCell(worldPoint);
             Tile tile = (Tile)GameManager.Instance.tilemap.GetTile(position);

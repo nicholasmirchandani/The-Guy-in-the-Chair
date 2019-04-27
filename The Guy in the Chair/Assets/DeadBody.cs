@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DeadBody : MonoBehaviour
 {
+    public bool found = false;
     private void OnMouseOver()
     {
         if(Input.GetMouseButtonDown(0))
@@ -13,7 +14,7 @@ public class DeadBody : MonoBehaviour
 
 
                 //Get to the body
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Ray ray = GameManager.Instance.levelCamera.ScreenPointToRay(Input.mousePosition);
                 Vector3 worldPoint = ray.GetPoint(-ray.origin.z / ray.direction.z);
                 Vector3Int position = GameManager.Instance.grid.WorldToCell(worldPoint);
                 GameManager.Instance.tracker.SetActive(true);

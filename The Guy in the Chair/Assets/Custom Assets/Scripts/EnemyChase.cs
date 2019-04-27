@@ -26,20 +26,23 @@ public class EnemyChase : MonoBehaviour
         ai = GetComponent<IAstarAI>();
         currentPatrolIndex = 0;
         searchForPlayer = false;
-        layerMask = LayerMask.GetMask("Player", "Wall");
+        layerMask = LayerMask.GetMask("Player", "Wall", "Body");
     }
 
     private void Update()
     {
         if (searchForPlayer && ai.reachedEndOfPath)
         {
-            Debug.Log("OOF");
+            Debug.Log("Searching Script here");
+            if(!losingPlayer)
+            {
+                StartCoroutine("LosePlayer");
+            }
             //Some sort of searching script
         }
         else if (transform.position == tracker.transform.position)
         {
             NextPatrolPoint();
-            Debug.Log("NEXT!");
         }
     }
 
@@ -63,6 +66,8 @@ public class EnemyChase : MonoBehaviour
                         wasTrackingPlayer = true;
                         isTrackingPlayer = true;
                         GetComponent<AILerp>().speed = 3;
+                        StopCoroutine("LosePlayer");
+                        losingPlayer = false;
                     }
                     else if (col.GetComponent<PlayerManager>().isHidden && isTrackingPlayer) //If the player is hidden but they never left the guard's line of sight
                     {
@@ -82,6 +87,24 @@ public class EnemyChase : MonoBehaviour
                 {
                     isTrackingPlayer = false;
                 }
+            }
+
+            if(col.tag.Equals("Body") && !col.GetComponent<DeadBody>().found)
+            {
+                Debug.DrawRay(transform.position, col.transform.position - transform.position);
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, col.transform.position - transform.position, Vector2.Distance(transform.position, col.transform.position - transform.position), layerMask);
+                if(hit)
+                {
+                    if(hit.collider.tag.Equals("Body"))
+                    {
+                        GameManager.Instance.chaosLevel += 10 / GameManager.Instance.chaosDefense;
+                        Debug.Log("BODY FOUND");
+                        col.GetComponent<DeadBody>().found = true;
+                        col.gameObject.SetActive(false);
+                        //TODO: Fix so that enemy AI will chase players over enemy bodies
+                    }
+                }
+
             }
 
             

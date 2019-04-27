@@ -45,7 +45,7 @@ public class Cover : MonoBehaviour
             if(!PlayerManager.Instance.isCarryingBody && !holdingBody)
             {
                 //Take Cover behind the cover
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                Ray ray = GameManager.Instance.levelCamera.ScreenPointToRay(Input.mousePosition);
                 Vector3 worldPoint = ray.GetPoint(-ray.origin.z / ray.direction.z);
                 Vector3Int position = GameManager.Instance.grid.WorldToCell(worldPoint);
 
@@ -72,7 +72,7 @@ public class Cover : MonoBehaviour
                 Debug.Log("Throwing body into cover");
                 //Throw body into cover
             }
-            else
+            else if (!PlayerManager.Instance.isCarryingBody && holdingBody)
             {
                 //TODO: Path to object then trigger when close enough via event
                 PlayerManager.Instance.isCarryingBody = true;
