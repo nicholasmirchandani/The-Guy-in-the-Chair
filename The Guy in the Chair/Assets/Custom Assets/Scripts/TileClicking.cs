@@ -48,7 +48,8 @@ public class TileClicking : MonoBehaviour
             {
                 GameManager.Instance.tracker.SetActive(false);
             }
-  
+
+            PlayerManager.Instance.queuedAction = PlayerManager.Action.NONE;
         }
     }
 }

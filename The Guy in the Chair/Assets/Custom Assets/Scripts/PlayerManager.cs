@@ -10,6 +10,15 @@ public class PlayerManager : MonoBehaviour
     public bool isTracking; //is tracking enemy for stealth kill
     public bool isCarryingBody;
     public GameObject bodyBeingCarried;
+    public Action queuedAction;
+
+    public enum Action {
+        NONE,
+        PICKUP_BODY,
+        HIDE_BODY, //IN COVER
+        TAKE_BODY, //FROM COVER
+        KILL_GUARD
+    }
 
     void Start()
     {

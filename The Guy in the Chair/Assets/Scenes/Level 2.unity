@@ -2999,6 +2999,7 @@ MonoBehaviour:
   isTracking: 0
   isCarryingBody: 0
   bodyBeingCarried: {fileID: 0}
+  queuedAction: 0
 --- !u!1 &1430603789
 GameObject:
   m_ObjectHideFlags: 0
@@ -4981,6 +4982,7 @@ MonoBehaviour:
   player: {fileID: 1410287202}
   tracker: {fileID: 1620765901}
   levelCamera: {fileID: 519420031}
+  bodyPrefab: {fileID: 1821876102, guid: 96118eecaad128441ac7ec2d690f49bf, type: 3}
   grid: {fileID: 1466820281}
   tilemap: {fileID: 899944451}
 --- !u!1 &1710599538
