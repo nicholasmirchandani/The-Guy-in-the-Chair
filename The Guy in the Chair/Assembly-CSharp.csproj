@@ -73,6 +73,7 @@
     <Compile Include="Assets\DeadBody.cs" />
     <Compile Include="Assets\GameScreen.cs" />
     <Compile Include="Assets\ResourceWatcher.cs" />
+    <Compile Include="Assets\Stairs.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/nicho/Desktop/Git Projects/The-Guy-in-the-Chair/The Guy in the Chair/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
