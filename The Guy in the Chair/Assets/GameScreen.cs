@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameScreen : MonoBehaviour
 {
     public Camera mainCamera;
-    public Camera levelCamera;
     float x = 0;
     float y = 0;
 
@@ -23,11 +22,11 @@ public class GameScreen : MonoBehaviour
             y += 5 * Input.GetAxis("Mouse Y");
             mainCamera.transform.eulerAngles = new Vector3(-y, x, 0);
         }
-        if (levelCamera.enabled)
+        if (GameManager.Instance.levelCamera.enabled)
         {
             if(Input.GetKeyDown(KeyCode.Escape))
             {
-                levelCamera.enabled = false;
+                GameManager.Instance.levelCamera.enabled = false;
                 mainCamera.enabled = true;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
@@ -41,7 +40,7 @@ public class GameScreen : MonoBehaviour
         {
             Debug.Log("SWITCH!");
             mainCamera.enabled = false;
-            levelCamera.enabled = true;
+            GameManager.Instance.levelCamera.enabled = true;
             x = 0;
             y = 0;
             mainCamera.transform.eulerAngles = new Vector3(-y, x, 0);
