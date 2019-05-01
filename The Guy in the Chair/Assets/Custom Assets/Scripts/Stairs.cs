@@ -18,7 +18,7 @@ public class Stairs : MonoBehaviour
             GameManager.Instance.tracker.transform.position = GameManager.Instance.player.transform.position;
             GameManager.Instance.playerAI.SearchPath();
             GameManager.Instance.levelCamera = destinationLevelCamera;
-            destinationLevelCamera.enabled = true;
+            destinationLevelCamera.enabled = currentLevelCamera.enabled;
             currentLevelCamera.enabled = false;
             destinationRenderCamera.enabled = true;
             currentRenderCamera.enabled = false;
