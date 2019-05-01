@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WordInput : MonoBehaviour
 {
     [SerializeField] private bool isActive;
     public Camera WordCamera;
+    public Text StringMessage;
     // Update is called once per frame
     void Update()
     {
@@ -14,7 +16,10 @@ public class WordInput : MonoBehaviour
             isActive = true;
             foreach (char letter in Input.inputString)
             {
-                Debug.Log(letter);//This is the letter we want to deal with
+                if(letter == StringMessage.text[0])
+                {
+                    StringMessage.text = StringMessage.text.Substring(1);
+                }
             }
         }
         else
