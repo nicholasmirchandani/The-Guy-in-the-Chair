@@ -40,7 +40,7 @@ public class Cover : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !GameManager.Instance.gameOver)
         {
             if(!PlayerManager.Instance.isCarryingBody && !holdingBody)
             {

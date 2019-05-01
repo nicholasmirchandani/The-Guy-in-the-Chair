@@ -11,8 +11,7 @@ public class PlayerKill : MonoBehaviour
         {
             if(GetComponentInParent<EnemyChase>().wasTrackingPlayer)
             {
-                Debug.Log("GAME OVER: Player killed by Guard!");
-                SceneManager.LoadScene("GameOver");
+                GameManager.Instance.GameOver("GAME OVER: Player killed by Guard!");
             }
             else
             {

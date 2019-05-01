@@ -19,7 +19,7 @@ public class CameraLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mainCamera.enabled)
+        if (mainCamera.enabled && !GameManager.Instance.isPaused && !GameManager.Instance.gameOver)
         {
             x += 5 * Input.GetAxis("Mouse X");
             y += 5 * Input.GetAxis("Mouse Y");

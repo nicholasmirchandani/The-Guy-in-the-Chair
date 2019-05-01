@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
     public bool isPaused;
+    public bool gameOver;
 
     [Header("Game Resources")]
     public double chaosLevel = 0;
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
     public Camera levelCamera;
     public GameObject bodyPrefab;
     public GameObject PauseMenu;
+    public GameObject GameOverMenu;
+    public Text GameOverMessage;
 
     [SerializeField] public Grid grid;
     [SerializeField] public Tilemap tilemap;
@@ -46,8 +50,7 @@ public class GameManager : MonoBehaviour
         if(chaosLevel >= 100)
         {
             chaosLevel = 0;
-            Debug.Log("GAME OVER: Chaos Level too High :(");
-            SceneManager.LoadScene("GameOver");
+            GameOver("GAME OVER: Chaos Level too High :(");
             //Game Over
         }
 
@@ -60,12 +63,30 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GameOver(string message)
+    {
+        if(GameOverMenu.activeSelf)
+        {
+            return;
+        }
+        GameOverMessage.text = message;
+        GameOverMenu.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        gameOver = true;
+    }
+
     public void ResumeGame()
     {
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         PauseMenu.SetActive(false);
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("Level 2");
     }
 
     public void QuitGame()

@@ -71,8 +71,7 @@ public class EnemyChase : MonoBehaviour
                     }
                     else if (col.GetComponent<PlayerManager>().isHidden && isTrackingPlayer) //If the player is hidden but they never left the guard's line of sight
                     {
-                        Debug.Log("Game Over: Player tried to hide in front of guard"); //TODO: Animations to make this make more sense.  You're not supposed to be able to run into and out of cover quiclky or easily
-                        SceneManager.LoadScene("GameOver");
+                        GameManager.Instance.GameOver("Game Over: Player tried to hide in front of guard"); //TODO: Animations to make this make more sense.  You're not supposed to be able to run into and out of cover quiclky or easily
                         //Game Over
                     }
                     else if (isTrackingPlayer)

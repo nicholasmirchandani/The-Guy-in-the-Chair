@@ -23,7 +23,7 @@ public class StealthKill : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !GameManager.Instance.gameOver)
         {
             //Charge the enemy
             Ray ray = GameManager.Instance.levelCamera.ScreenPointToRay(Input.mousePosition);

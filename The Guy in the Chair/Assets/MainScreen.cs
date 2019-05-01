@@ -18,7 +18,7 @@ public class MainScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.Instance.isPaused)
+        if (GameManager.Instance.isPaused || GameManager.Instance.gameOver)
         {
             //Don't do anything
         }
@@ -39,7 +39,7 @@ public class MainScreen : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (!GameManager.Instance.isPaused)
+        if (!GameManager.Instance.isPaused && !GameManager.Instance.gameOver)
         {
             if (Input.GetMouseButtonDown(0))
             {

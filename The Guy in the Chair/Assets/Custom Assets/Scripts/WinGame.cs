@@ -21,7 +21,7 @@ public class WinGame : MonoBehaviour
     // Update is called once per frame
     void OnMouseOver()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !GameManager.Instance.gameOver)
         {
             //Take Cover behind the cover
             Ray ray = GameManager.Instance.levelCamera.ScreenPointToRay(Input.mousePosition);
