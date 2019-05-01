@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class GameScreen : MonoBehaviour
 {
+    [SerializeField] private bool enableCursor;
+    [SerializeField] private Camera targetCamera;
     public Camera mainCamera;
     float x = 0;
     float y = 0;
-
-    public GameObject PauseMenu;
-    private bool isPaused = false;
 
     private void Start()
     {
@@ -20,36 +19,20 @@ public class GameScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isPaused)
+        if(GameManager.Instance.isPaused)
         {
             //Don't do anything
         }
         else
         {
-            if (mainCamera.enabled)
-            {
-                x += 5 * Input.GetAxis("Mouse X");
-                y += 5 * Input.GetAxis("Mouse Y");
-                mainCamera.transform.eulerAngles = new Vector3(-y, x, 0);
-            }
-            if (GameManager.Instance.levelCamera.enabled)
+            if (targetCamera.enabled)
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
-                    GameManager.Instance.levelCamera.enabled = false;
+                    targetCamera.enabled = false;
                     mainCamera.enabled = true;
                     Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
-                }
-            }
-            else
-            {
-                if (Input.GetKeyDown(KeyCode.Escape))
-                {
-                    isPaused = true;
-                    PauseMenu.SetActive(true);
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
                 }
             }
         }
@@ -57,32 +40,22 @@ public class GameScreen : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if(!isPaused)
+        if(!GameManager.Instance.isPaused)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 Debug.Log("SWITCH!");
                 mainCamera.enabled = false;
-                GameManager.Instance.levelCamera.enabled = true;
+                targetCamera.enabled = true;
                 x = 0;
                 y = 0;
                 mainCamera.transform.eulerAngles = new Vector3(-y, x, 0);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                if(enableCursor)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                    Cursor.visible = true;
+                }
             }
         }
-    }
-
-    public void ResumeGame()
-    {
-        isPaused = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        PauseMenu.SetActive(false);
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
     }
 }

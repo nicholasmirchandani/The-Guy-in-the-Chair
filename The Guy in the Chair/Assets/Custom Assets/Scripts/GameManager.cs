@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public bool isPaused;
+
     [Header("Game Resources")]
     public double chaosLevel = 0;
     public double chaosDefense = 1;
@@ -19,8 +21,10 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public IAstarAI playerAI;
     public GameObject tracker;
+    public Camera mainCamera;
     public Camera levelCamera;
     public GameObject bodyPrefab;
+    public GameObject PauseMenu;
 
     [SerializeField] public Grid grid;
     [SerializeField] public Tilemap tilemap;
@@ -37,7 +41,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(chaosLevel >= 100)
         {
@@ -46,5 +50,26 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("GameOver");
             //Game Over
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && mainCamera.enabled)
+        {
+            isPaused = true;
+            PauseMenu.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+
+    public void ResumeGame()
+    {
+        isPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        PauseMenu.SetActive(false);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
