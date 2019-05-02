@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinGame : MonoBehaviour
 {
+
+    public GameObject winGame;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +18,7 @@ public class WinGame : MonoBehaviour
     {
         if(collision.tag.Equals("Player") && GameManager.Instance.collectibles >= GameManager.Instance.collectiblesRequired)
         {
-            Debug.Log("YOU WIN!");
+            winGame.SetActive(true);
         }
     }
 

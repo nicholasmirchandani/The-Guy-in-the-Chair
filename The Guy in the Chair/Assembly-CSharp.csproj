@@ -60,8 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraLook.cs" />
-    <Compile Include="Assets\Collectible.cs" />
+    <Compile Include="Assets\Custom Assets\Scripts\CameraLook.cs" />
+    <Compile Include="Assets\Custom Assets\Scripts\Collectible.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\Cover.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\DeadBody.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\EnemyChase.cs" />
@@ -69,6 +69,7 @@
     <Compile Include="Assets\Custom Assets\Scripts\GameScreen.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\Hackable.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\HackableDoor.cs" />
+    <Compile Include="Assets\Custom Assets\Scripts\MainScreen.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\PlayerKill.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\ResourceWatcher.cs" />
@@ -76,9 +77,8 @@
     <Compile Include="Assets\Custom Assets\Scripts\StealthKill.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\TileClicking.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\WinGame.cs" />
+    <Compile Include="Assets\Custom Assets\Scripts\WordGame.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\WordInput.cs" />
-    <Compile Include="Assets\MainScreen.cs" />
-    <Compile Include="Assets\WordGame.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/nicho/Desktop/Git Projects/The-Guy-in-the-Chair/The Guy in the Chair/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
