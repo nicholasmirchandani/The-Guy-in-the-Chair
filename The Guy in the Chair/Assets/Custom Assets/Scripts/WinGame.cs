@@ -12,7 +12,7 @@ public class WinGame : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag.Equals("Player"))
+        if(collision.tag.Equals("Player") && GameManager.Instance.collectibles >= GameManager.Instance.collectiblesRequired)
         {
             Debug.Log("YOU WIN!");
         }

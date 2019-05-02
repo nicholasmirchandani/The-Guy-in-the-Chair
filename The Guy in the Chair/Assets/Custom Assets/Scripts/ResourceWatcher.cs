@@ -14,6 +14,6 @@ public class ResourceWatcher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<Text>().text = "Chaos level: " + GameManager.Instance.chaosLevel + "\nElectricity: " + GameManager.Instance.electricityLevel + "\nW.A.D.E.S.: " + GameManager.Instance.wadesCount;
+        this.GetComponent<Text>().text = "Chaos level: " + GameManager.Instance.chaosLevel + "\nElectricity: " + GameManager.Instance.electricityLevel + "\nW.A.D.E.S.: " + GameManager.Instance.wadesCount + "\nCollectibles Aquired: " + GameManager.Instance.collectibles + " / " + GameManager.Instance.collectiblesRequired;
     }
 }

@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public double chaosDefense = 1;
     public int electricityLevel = 10;
     public int wadesCount = 0;
+    public int collectibles = 0;
+    public int collectiblesRequired = 3;
 
     [Header("Game Assets")]
     public GameObject player;
