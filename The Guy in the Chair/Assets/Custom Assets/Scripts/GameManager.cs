@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public int wadesCount = 0;
     public int collectibles = 0;
     public int collectiblesRequired = 3;
+    public int timeRemaining = 120;
 
     [Header("Game Assets")]
     public GameObject player;
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         playerAI = player.GetComponent<IAstarAI>();
+        StartCoroutine("CountdownTimer");
     }
 
     // Update is called once per frame
@@ -65,9 +67,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public IEnumerator CountdownTimer()
+    {
+        while(timeRemaining > 0)
+        {
+            yield return new WaitForSeconds(1f);
+            --timeRemaining;
+        }
+        GameOver("Ran out of time");
+    }
+
     public void GameOver(string message)
     {
-        if(GameOverMenu.activeSelf)
+        if(gameOver)
         {
             return;
         }

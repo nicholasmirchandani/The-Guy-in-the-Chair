@@ -19,6 +19,7 @@ public class WinGame : MonoBehaviour
         if(collision.tag.Equals("Player") && GameManager.Instance.collectibles >= GameManager.Instance.collectiblesRequired)
         {
             winGame.SetActive(true);
+            GameManager.Instance.gameOver = true;
         }
     }
 
