@@ -15,6 +15,10 @@ public class TileClicking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameManager.Instance.isPaused)
+        {
+            return;
+        }
         if (GameManager.Instance.playerAI.reachedDestination)
         {
             GameManager.Instance.tracker.SetActive(false);

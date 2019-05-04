@@ -38,10 +38,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Grid grid;
     [SerializeField] public Tilemap tilemap;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
     // Start is called before the first frame update
     void Start()
     {
