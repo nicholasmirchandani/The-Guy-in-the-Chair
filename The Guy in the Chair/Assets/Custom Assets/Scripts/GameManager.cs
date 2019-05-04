@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public GameObject GameOverMenu;
     public Text GameOverMessage;
     public GameObject exitArrows;
+    public GameObject[] enemies;
 
     [SerializeField] public Grid grid;
     [SerializeField] public Tilemap tilemap;
@@ -47,6 +48,8 @@ public class GameManager : MonoBehaviour
         Instance = this;
         playerAI = player.GetComponent<IAstarAI>();
         StartCoroutine("CountdownTimer");
+
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     // Update is called once per frame
@@ -54,17 +57,14 @@ public class GameManager : MonoBehaviour
     {
         if(chaosLevel >= 100)
         {
-            chaosLevel = 0;
+            chaosLevel = 100;
             GameOver("GAME OVER: Chaos Level too High :(");
             //Game Over
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && mainCamera.enabled)
+        if (Input.GetKeyDown(KeyCode.Escape) && mainCamera.enabled && !gameOver)
         {
-            isPaused = true;
-            PauseMenu.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            PauseGame();
         }
     }
 
@@ -99,12 +99,32 @@ public class GameManager : MonoBehaviour
         gameOver = true;
     }
 
+    public void PauseGame()
+    {
+        isPaused = true;
+        PauseMenu.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        player.GetComponent<AILerp>().enabled = false;
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.GetComponent<AILerp>().enabled = false;
+        }
+        StopCoroutine("CountdownTimer");
+    }
+
     public void ResumeGame()
     {
+        player.GetComponent<AILerp>().enabled = true;
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.GetComponent<AILerp>().enabled = true;
+        }
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         PauseMenu.SetActive(false);
+        StartCoroutine("CountdownTimer");
     }
 
     public void Retry()

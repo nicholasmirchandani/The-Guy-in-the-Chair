@@ -50,6 +50,10 @@ public class EnemyChase : MonoBehaviour
     {
         if(Time.frameCount % 5 == 0)
         {
+            if(GameManager.Instance.isPaused)
+            {
+                return;
+            }
             //If the collider is a Player
             if(col.tag.Equals("Player"))
             {

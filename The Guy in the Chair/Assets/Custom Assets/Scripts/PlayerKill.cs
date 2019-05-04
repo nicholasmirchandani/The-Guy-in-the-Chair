@@ -16,10 +16,13 @@ public class PlayerKill : MonoBehaviour
             else
             {
                 Instantiate(GameManager.Instance.bodyPrefab, this.gameObject.transform.parent.transform.position + new Vector3(0,0,0.5f), Quaternion.identity);
+                this.gameObject.transform.parent.gameObject.SetActive(false); //Setting active to false before destroying to allow findgameobjectswithtag to work
+                GameManager.Instance.enemies = GameObject.FindGameObjectsWithTag("Enemy"); //Updating the enemies array in GameManager to prevent the game from breaking
                 Destroy(this.gameObject.transform.parent.gameObject); //TODO: Change to drop a body behind
                 Debug.Log("Guard Killed By Player!");
-                
-                
+
+
+
                 //Stop going after the enemy after you kill them
                 if (PlayerManager.Instance.isTracking)
                 {
