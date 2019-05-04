@@ -15,7 +15,7 @@ public class TileClicking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.Instance.isPaused)
+        if(GameManager.Instance.isPaused || GameManager.Instance.gameOver)
         {
             return;
         }

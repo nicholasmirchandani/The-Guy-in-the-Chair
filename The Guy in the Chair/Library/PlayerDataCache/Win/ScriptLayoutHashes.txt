@@ -2,7 +2,7 @@ Win
 PlayerPath?
 C:/Users/nicho/Desktop/Git Projects/The-Guy-in-the-Chair/The Guy in the Chair/Builds/The Guy in the Chair.exe
 SceneListBegin?
-Assets/Scenes/Level 2.unity
+Assets/Scenes/Level 1.unity
 SceneListEnd?
 557b8d683142468c7c52e0163c1928a6 AstarPathfindingProject.dll:Pathfinding.ProceduralGridMover
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret

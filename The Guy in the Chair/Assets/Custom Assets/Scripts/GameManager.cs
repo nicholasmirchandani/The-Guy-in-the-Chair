@@ -93,6 +93,12 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         gameOver = true;
+        player.GetComponent<AILerp>().enabled = false;
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.GetComponent<AILerp>().enabled = false;
+        }
+        StopCoroutine("CountdownTimer");
     }
 
     public void PauseGame()
@@ -125,7 +131,7 @@ public class GameManager : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene("Level 2");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void QuitGame()
