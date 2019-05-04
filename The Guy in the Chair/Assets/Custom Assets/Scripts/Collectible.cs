@@ -39,6 +39,7 @@ public class Collectible : MonoBehaviour
         if(collision.tag.Equals("Player"))
         {
             GameManager.Instance.collectibles += 1;
+            GameManager.Instance.OnCollect();
             gameObject.SetActive(false);
         }
     }

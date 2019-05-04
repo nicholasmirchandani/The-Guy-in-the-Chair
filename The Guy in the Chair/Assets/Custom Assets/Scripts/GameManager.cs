@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject GameOverMenu;
     public Text GameOverMessage;
+    public GameObject exitArrows;
 
     [SerializeField] public Grid grid;
     [SerializeField] public Tilemap tilemap;
@@ -75,6 +76,14 @@ public class GameManager : MonoBehaviour
             --timeRemaining;
         }
         GameOver("Ran out of time");
+    }
+
+    public void OnCollect()
+    {
+        if(collectibles >= collectiblesRequired)
+        {
+            exitArrows.SetActive(true);
+        }
     }
 
     public void GameOver(string message)
