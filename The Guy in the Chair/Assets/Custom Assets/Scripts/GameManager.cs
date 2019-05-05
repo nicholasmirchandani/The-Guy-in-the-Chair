@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public bool gameOver;
     public float unpausedTimePassed;
     private bool hasStarted;
+    private bool canPause;
 
     [Header("Game Resources")]
     public double chaosLevel = 0;
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
     public MainScreen mainScreen;
     public GameScreen wordScreen;
     public GameScreen resourceScreen;
+    public Image logo;
 
     [SerializeField] public Grid grid;
     [SerializeField] public Tilemap tilemap;
@@ -54,6 +56,10 @@ public class GameManager : MonoBehaviour
         StartCoroutine("StartGame");
 
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        logo.CrossFadeAlpha(0, 0.01f, false);
+        logo.enabled = true;
+        canPause = true;
     }
 
     // Update is called once per frame
@@ -95,8 +101,14 @@ public class GameManager : MonoBehaviour
         //TODO: Play audio clip intro
         //TODO: Add subtitles
         StartCoroutine("TrackUnpausedTimePassed");
-        yield return new WaitUntil(() => unpausedTimePassed >= 5f); //TODO: Replace 5f with the length of the audio clip
+        yield return new WaitUntil(() => unpausedTimePassed >= 1f); //TODO: Replace 1f with the length of the audio clip
         StopCoroutine("TrackUnpausedTimePassed");
+	canPause = false;
+	logo.CrossFadeAlpha(1, 2.0f, false);
+	yield return new WaitForSeconds(2.0f);
+	logo.CrossFadeAlpha(0, 2.0f, false);
+	yield return new WaitForSeconds(2.0f);
+	canPause = true;
         mainScreen.EnableScreen();
         resourceScreen.EnableScreen();
         wordScreen.EnableScreen();
@@ -144,6 +156,10 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
+	if(!canPause) 
+	{
+            return;
+	}
         isPaused = true;
         PauseMenu.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
