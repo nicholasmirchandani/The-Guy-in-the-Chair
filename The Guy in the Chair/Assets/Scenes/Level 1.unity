@@ -28477,8 +28477,9 @@ MonoBehaviour:
   electricityLevel: 4
   wadesCount: 0
   collectibles: 0
-  collectiblesRequired: 6
+  collectiblesRequired: 0
   timeRemaining: 240
+  totalScore: 0
   player: {fileID: 1410287202}
   tracker: {fileID: 1620765901}
   mainCamera: {fileID: 2087344976}
@@ -28487,6 +28488,8 @@ MonoBehaviour:
   PauseMenu: {fileID: 1685867487}
   GameOverMenu: {fileID: 1967461967}
   GameOverMessage: {fileID: 59173952}
+  WinGameMenu: {fileID: 912460033}
+  WinGameMessage: {fileID: 1482703412}
   exitArrows: {fileID: 845109836}
   enemies: []
   grid: {fileID: 1466820281}

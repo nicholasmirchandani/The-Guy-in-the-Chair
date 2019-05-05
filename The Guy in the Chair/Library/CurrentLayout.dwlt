@@ -115,7 +115,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 498}
   m_MaxSize: {x: 18008, y: 14048}
   vertical: 0
-  controlID: 16062
+  controlID: 932
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 498}
   m_MaxSize: {x: 10004, y: 14048}
   vertical: 1
-  controlID: 16063
+  controlID: 933
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -356,9 +356,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: c2090000
       m_LastClickedID: 0
-      m_ExpandedIDs: d0abffffe2abffff4cadffff8cb1ffff9eb1ffff08b3ffff44d9ffff78f8ffffd4fbffff2816000046180000eed802003cd902006edc0200
+      m_ExpandedIDs: b6fbffff78150000ca1600008e170000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -413,9 +413,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.8128917, y: -2.802831, z: -8.969188}
+    m_Target: {x: -7.1474686, y: -32.628334, z: -9.715223}
     speed: 2
-    m_Value: {x: -1.8128917, y: -2.802831, z: -8.969188}
+    m_Value: {x: -7.1474686, y: -32.628334, z: -9.715223}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -447,9 +447,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: -1}
   m_Size:
-    m_Target: 25.22959
+    m_Target: 38.39456
     speed: 2
-    m_Value: 25.22959
+    m_Value: 38.39456
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -499,11 +499,11 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Custom Assets/Prefabs
+    - Assets/Custom Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Custom Assets/Prefabs
+  - Assets/Custom Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\nicho\Desktop\Git Projects\The-Guy-in-the-Chair\The
     Guy in the Chair
@@ -511,9 +511,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 308}
-    m_SelectedIDs: 54130000
-    m_LastClickedID: 4948
-    m_ExpandedIDs: 00000000ba0a0000ee0c0000080e00004a0e00009e110000a2110000ac1100000414000000ca9a3b
+    m_SelectedIDs: fa0c0000
+    m_LastClickedID: 3322
+    m_ExpandedIDs: 00000000ca0a0000fe0c0000180e00005a0e0000ae110000b2110000bc1100001414000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -541,7 +541,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ba0a0000ee0c0000080e00004a0e00009e110000a2110000ac1100000414000000ca9a3b
+    m_ExpandedIDs: 00000000ca0a0000fe0c0000180e00005a0e0000ae110000b2110000bc1100001414000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

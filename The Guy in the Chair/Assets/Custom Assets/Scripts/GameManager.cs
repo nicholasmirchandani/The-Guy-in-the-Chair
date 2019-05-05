@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public int collectibles = 0;
     public int collectiblesRequired = 3;
     public int timeRemaining = 120;
+    public int totalScore = 0;
 
     [Header("Game Assets")]
     public GameObject player;
@@ -32,6 +33,8 @@ public class GameManager : MonoBehaviour
     public GameObject PauseMenu;
     public GameObject GameOverMenu;
     public Text GameOverMessage;
+    public GameObject WinGameMenu;
+    public Text WinGameMessage;
     public GameObject exitArrows;
     public GameObject[] enemies;
 
@@ -99,6 +102,13 @@ public class GameManager : MonoBehaviour
             enemy.GetComponent<AILerp>().enabled = false;
         }
         StopCoroutine("CountdownTimer");
+    }
+
+    public void WinGame()
+    {
+        WinGameMenu.SetActive(true);
+        WinGameMessage.text = "You win!\nScore: " + ((100-chaosLevel) + timeRemaining);
+        GameManager.Instance.gameOver = true;
     }
 
     public void PauseGame()
