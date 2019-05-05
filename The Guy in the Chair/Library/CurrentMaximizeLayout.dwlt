@@ -20,12 +20,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1440
+    width: 1536
     height: 732
   m_MinSize: {x: 709, y: 374}
   m_MaxSize: {x: 18004, y: 14024}
   vertical: 0
-  controlID: 64
+  controlID: 2596
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 1500, y: 606}
+  m_LastWindowPixelSize: {x: 1875, y: 757.5}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -123,7 +123,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 303
+    width: 323
     height: 732
   m_MinSize: {x: 202, y: 224}
   m_MaxSize: {x: 4002, y: 4024}
@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 75
-    width: 301
+    y: 72
+    width: 321
     height: 712
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
@@ -163,7 +163,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: f2c0ffff
+      m_ExpandedIDs: 66aeffff66b4ffff584b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -204,14 +204,14 @@ MonoBehaviour:
   - {fileID: 8}
   m_Position:
     serializedVersion: 2
-    x: 303
+    x: 323
     y: 0
-    width: 707
+    width: 754
     height: 732
   m_MinSize: {x: 230, y: 374}
   m_MaxSize: {x: 10000, y: 14024}
   vertical: 1
-  controlID: 65
+  controlID: 2597
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -229,7 +229,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 707
+    width: 754
     height: 327
   m_MinSize: {x: 104, y: 124}
   m_MaxSize: {x: 4004, y: 4024}
@@ -259,20 +259,20 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 303
-    y: 75
-    width: 703
+    x: 323.2
+    y: 72
+    width: 750
     height: 307
   m_PersistentViewDataDictionary: {fileID: 0}
   m_WindowGUID: 30fceb4a69fa6184dab960f9d62963de
   m_SceneLighting: 1
-  m_2DMode: 1
+  m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 25.361784, y: -52.029663, z: -0.46970406}
+    m_Target: {x: -102.62309, y: -0.5912448, z: -6.19417}
     speed: 2
-    m_Value: {x: 25.361784, y: -52.029663, z: -0.46970406}
+    m_Value: {x: -102.62309, y: -0.5912448, z: -6.19417}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -292,25 +292,25 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
     yGrid:
-      m_Target: 0
-      speed: 2
-      m_Value: 0
-    zGrid:
       m_Target: 1
       speed: 2
       m_Value: 1
+    zGrid:
+      m_Target: 0
+      speed: 2
+      m_Value: 0
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: -1}
+    m_Target: {x: -0.05261579, y: 0.07990023, z: -0.0042235884, w: -0.9954043}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: -0.05261579, y: 0.07990023, z: -0.0042235884, w: -0.9954043}
   m_Size:
-    m_Target: 43.21117
+    m_Target: 7.6145086
     speed: 2
-    m_Value: 43.21117
+    m_Value: 7.6145086
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_ShowGlobalGrid: 1
   m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 327
-    width: 707
+    width: 754
     height: 405
   m_MinSize: {x: 230, y: 250}
   m_MaxSize: {x: 10000, y: 10000}
@@ -366,9 +366,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 303
-    y: 402
-    width: 703
+    x: 323.2
+    y: 399.2
+    width: 750
     height: 385
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
@@ -383,21 +383,21 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Custom Assets/Models
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Custom Assets/Models
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: /Users/scottcummings/Desktop/Git Projects/The-Guy-in-the-Chair/The
+  m_LastProjectPath: C:\Users\nicho\Desktop\Git Projects\The-Guy-in-the-Chair\The
     Guy in the Chair
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 90440000
-    m_LastClickedID: 17552
-    m_ExpandedIDs: 0000000090440000a44500006a4600006c460000724600001c47000000ca9a3b
+    m_SelectedIDs: 38470000
+    m_LastClickedID: 18232
+    m_ExpandedIDs: 00000000ba450000ce4600008e47000090470000964700004048000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -425,7 +425,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000090440000a44500006a4600006c460000724600001c470000
+    m_ExpandedIDs: 00000000ba450000ce4600008e47000090470000964700004048000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -450,10 +450,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 3c4c0000
+    m_LastClickedInstanceID: 19516
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: a00f0000040d00005230000058f0ffff021000002c130000f80e00000a29000000000000
+    m_ExpandedInstanceIDs: a00f0000040d00005230000058f0ffff021000002c130000f80e00000a29000000000000c63c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -521,9 +521,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1010
+    x: 1077
     y: 0
-    width: 430
+    width: 459
     height: 732
   m_MinSize: {x: 277, y: 74}
   m_MaxSize: {x: 4002, y: 4024}
@@ -553,9 +553,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1010
-    y: 75
-    width: 428
+    x: 1077.2001
+    y: 72
+    width: 457
     height: 712
   m_PersistentViewDataDictionary: {fileID: 0}
   m_ObjectsLockedBeforeSerialization: []

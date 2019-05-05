@@ -4,11 +4,42 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Box002
+    100004: Box008
+    100006: Cylinder001
+    100008: Base
+    100010: Buttons
+    100012: Phone
     400000: //RootNode
+    400002: Box002
+    400004: Box008
+    400006: Cylinder001
+    400008: Base
+    400010: Buttons
+    400012: Phone
     2100000: No Name
+    2100002: 02 - Default
+    2100004: 01 - Default
     2300000: //RootNode
+    2300002: Box002
+    2300004: Box008
+    2300006: Cylinder001
+    2300008: Base
+    2300010: Buttons
+    2300012: Phone
     3300000: //RootNode
+    3300002: Box002
+    3300004: Box008
+    3300006: Cylinder001
+    3300008: Base
+    3300010: Buttons
+    3300012: Phone
     4300000: Box002
+    4300002: Cylinder001
+    4300004: Box008
+    4300006: Base
+    4300008: Phone
+    4300010: Buttons
   externalObjects: {}
   materials:
     importMaterials: 1
