@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 705, y: 374}
   m_MaxSize: {x: 18000, y: 14024}
   vertical: 0
-  controlID: 2739
+  controlID: 238
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -163,7 +163,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 80fbffffd4fbffff
+      m_ExpandedIDs: 90b7ffff0e4a0000904b00002a4c0000004d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_MinSize: {x: 230, y: 374}
   m_MaxSize: {x: 10000, y: 14024}
   vertical: 1
-  controlID: 2695
+  controlID: 239
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -265,14 +265,14 @@ MonoBehaviour:
     height: 307
   m_PersistentViewDataDictionary: {fileID: 0}
   m_WindowGUID: 30fceb4a69fa6184dab960f9d62963de
-  m_SceneLighting: 0
-  m_2DMode: 0
+  m_SceneLighting: 1
+  m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 924.8741, y: 348.5401, z: 29.476242}
+    m_Target: {x: 25.361784, y: -52.029663, z: -0.46970406}
     speed: 2
-    m_Value: {x: 924.8741, y: 348.5401, z: 29.476242}
+    m_Value: {x: 25.361784, y: -52.029663, z: -0.46970406}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -292,27 +292,27 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
     yGrid:
-      m_Target: 1
-      speed: 2
-      m_Value: 1
-    zGrid:
       m_Target: 0
       speed: 2
       m_Value: 0
+    zGrid:
+      m_Target: 1
+      speed: 2
+      m_Value: 1
   m_Rotation:
-    m_Target: {x: -0.016808217, y: 0.009595922, z: -0.0001608019, w: -0.99981266}
+    m_Target: {x: 0, y: 0, z: 0, w: -1}
     speed: 2
-    m_Value: {x: -0.016808217, y: 0.009595922, z: -0.0001608019, w: -0.99981266}
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 970.6279
+    m_Target: 43.21117
     speed: 2
-    m_Value: 970.6279
+    m_Value: 43.21117
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: -0.07081329, y: -0.38404408, z: 0.02955711, w: -0.9201207}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -383,11 +383,11 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Custom Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Custom Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\nicho\Desktop\Git Projects\The-Guy-in-the-Chair\The
     Guy in the Chair
@@ -395,9 +395,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: bc0a0000
-    m_LastClickedID: 2748
-    m_ExpandedIDs: 00000000bc0a00000c0e0000a2110000a6110000b01100000c14000000ca9a3b
+    m_SelectedIDs: ac470000
+    m_LastClickedID: 18348
+    m_ExpandedIDs: 00000000664500007a4600003a4700003c47000042470000e647000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -425,7 +425,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000bc0a00000c0e0000a2110000a6110000b01100000c14000000ca9a3b
+    m_ExpandedIDs: 00000000664500007a4600003a4700003c47000042470000e647000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -450,8 +450,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 42490000
+    m_LastClickedInstanceID: 18754
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: a00f0000040d00005230000058f0ffff021000002c130000f80e00000a29000000000000
     m_RenameOverlay:
