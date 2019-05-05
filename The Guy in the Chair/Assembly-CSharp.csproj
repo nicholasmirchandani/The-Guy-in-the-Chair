@@ -70,6 +70,7 @@
     <Compile Include="Assets\Custom Assets\Scripts\Hackable.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\HackableDoor.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\MainScreen.cs" />
+    <Compile Include="Assets\Custom Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\PlayerKill.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Custom Assets\Scripts\ResourceWatcher.cs" />

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameScreen : MonoBehaviour
 {
+    [SerializeField] private bool isEnabled;
     [SerializeField] private bool enableCursor;
     [SerializeField] private Camera targetCamera;
     public Camera mainCamera;
@@ -40,7 +41,7 @@ public class GameScreen : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if(!GameManager.Instance.isPaused && !GameManager.Instance.gameOver)
+        if(!GameManager.Instance.isPaused && !GameManager.Instance.gameOver && isEnabled)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -57,5 +58,11 @@ public class GameScreen : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void EnableScreen()
+    {
+        isEnabled = true;
+        GetComponentInParent<MeshRenderer>().enabled = true;
     }
 }

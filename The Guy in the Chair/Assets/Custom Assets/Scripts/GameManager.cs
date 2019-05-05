@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     public bool isPaused;
     public bool gameOver;
+    public float unpausedTimePassed;
+    private bool hasStarted;
 
     [Header("Game Resources")]
     public double chaosLevel = 0;
@@ -37,6 +39,9 @@ public class GameManager : MonoBehaviour
     public Text WinGameMessage;
     public GameObject exitArrows;
     public GameObject[] enemies;
+    public MainScreen mainScreen;
+    public GameScreen wordScreen;
+    public GameScreen resourceScreen;
 
     [SerializeField] public Grid grid;
     [SerializeField] public Tilemap tilemap;
@@ -46,7 +51,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         playerAI = player.GetComponent<IAstarAI>();
-        StartCoroutine("CountdownTimer");
+        StartCoroutine("StartGame");
 
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
@@ -85,6 +90,32 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public IEnumerator StartGame()
+    {
+        //TODO: Play audio clip intro
+        //TODO: Add subtitles
+        StartCoroutine("TrackUnpausedTimePassed");
+        yield return new WaitUntil(() => unpausedTimePassed >= 5f); //TODO: Replace 5f with the length of the audio clip
+        StopCoroutine("TrackUnpausedTimePassed");
+        mainScreen.EnableScreen();
+        resourceScreen.EnableScreen();
+        wordScreen.EnableScreen();
+        StartCoroutine("CountdownTimer");
+        hasStarted = true;
+    }
+
+    public IEnumerator TrackUnpausedTimePassed()
+    {
+        while(true)
+        {
+            if(!isPaused)
+            {
+                unpausedTimePassed += Time.deltaTime;
+            }
+            yield return new WaitForFixedUpdate();
+        }
+    }
+
     public void GameOver(string message)
     {
         if(gameOver)
@@ -107,7 +138,7 @@ public class GameManager : MonoBehaviour
     public void WinGame()
     {
         WinGameMenu.SetActive(true);
-        WinGameMessage.text = "You win!\nScore: " + ((100-chaosLevel) + timeRemaining);
+        WinGameMessage.text = "You win!\nChaos Level: " + chaosLevel + "\nTime Remaining" + timeRemaining + "\nScore: " + ((100-chaosLevel) + timeRemaining);
         GameManager.Instance.gameOver = true;
     }
 
@@ -136,7 +167,10 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         PauseMenu.SetActive(false);
-        StartCoroutine("CountdownTimer");
+        if(hasStarted)
+        {
+            StartCoroutine("CountdownTimer");
+        }
     }
 
     public void Retry()
@@ -144,8 +178,8 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void QuitGame()
+    public void QuitToMenu()
     {
-        Application.Quit();
+        SceneManager.LoadScene("Main Menu");
     }
 }

@@ -33,12 +33,12 @@ public class EnemyChase : MonoBehaviour
     {
         if (searchForPlayer && ai.reachedEndOfPath)
         {
-            Debug.Log("Searching Script here");
-            if(!losingPlayer)
+            //Some sort of searching script
+            if (!losingPlayer)
             {
                 StartCoroutine("LosePlayer");
             }
-            //Some sort of searching script
+
         }
         else if (transform.position == tracker.transform.position)
         {
