@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
     public AudioClip introMonologue;
     public AudioSource phoneMonologueSource;
     public AudioSource musicSource;
+    public Text controlHint;
 
     [SerializeField] public Grid grid;
     [SerializeField] public Tilemap tilemap;
@@ -107,6 +108,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine("TrackUnpausedTimePassed");
         yield return new WaitUntil(() => unpausedTimePassed >= introMonologue.length || Input.GetKeyDown(KeyCode.Space)); //TODO: Replace 1f with the length of the audio clip
         StopCoroutine("TrackUnpausedTimePassed");
+        controlHint.text = "Left click into monitors";
 	    canPause = false;
         if(Input.GetKeyDown(KeyCode.Space))
         {

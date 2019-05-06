@@ -33,6 +33,7 @@ public class MainScreen : MonoBehaviour
                     mainCamera.enabled = true;
                     Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
+                    GameManager.Instance.controlHint.text = "Left click into monitors";
                 }
             }
         }
@@ -44,7 +45,7 @@ public class MainScreen : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("SWITCH!");
+                GameManager.Instance.controlHint.text = "Escape to return";
                 mainCamera.enabled = false;
                 GameManager.Instance.levelCamera.enabled = true;
                 x = 0;

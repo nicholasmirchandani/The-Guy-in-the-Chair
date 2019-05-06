@@ -30,6 +30,7 @@ public class GameScreen : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Escape))
                 {
+                    GameManager.Instance.controlHint.text = "Left click into monitors";
                     targetCamera.enabled = false;
                     mainCamera.enabled = true;
                     Cursor.lockState = CursorLockMode.Locked;
@@ -45,7 +46,7 @@ public class GameScreen : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("SWITCH!");
+                GameManager.Instance.controlHint.text = "Escape to return";
                 mainCamera.enabled = false;
                 targetCamera.enabled = true;
                 x = 0;
