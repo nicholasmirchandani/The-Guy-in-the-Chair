@@ -44,6 +44,9 @@ public class GameManager : MonoBehaviour
     public GameScreen wordScreen;
     public GameScreen resourceScreen;
     public Image logo;
+    public AudioClip introMonologue;
+    public AudioSource phoneMonologueSource;
+    public AudioSource musicSource;
 
     [SerializeField] public Grid grid;
     [SerializeField] public Tilemap tilemap;
@@ -99,16 +102,22 @@ public class GameManager : MonoBehaviour
     public IEnumerator StartGame()
     {
         //TODO: Play audio clip intro
+        phoneMonologueSource.Play();
         //TODO: Add subtitles
         StartCoroutine("TrackUnpausedTimePassed");
-        yield return new WaitUntil(() => unpausedTimePassed >= 1f); //TODO: Replace 1f with the length of the audio clip
+        yield return new WaitUntil(() => unpausedTimePassed >= introMonologue.length || Input.GetKeyDown(KeyCode.Space)); //TODO: Replace 1f with the length of the audio clip
         StopCoroutine("TrackUnpausedTimePassed");
-	canPause = false;
-	logo.CrossFadeAlpha(1, 2.0f, false);
-	yield return new WaitForSeconds(2.0f);
-	logo.CrossFadeAlpha(0, 2.0f, false);
-	yield return new WaitForSeconds(2.0f);
-	canPause = true;
+	    canPause = false;
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            phoneMonologueSource.Pause();
+        }
+        musicSource.Play();
+	    logo.CrossFadeAlpha(1, 2.0f, false);
+	    yield return new WaitForSeconds(4.0f);
+	    logo.CrossFadeAlpha(0, 2.0f, false);
+	    yield return new WaitForSeconds(4.0f);
+	    canPause = true;
         mainScreen.EnableScreen();
         resourceScreen.EnableScreen();
         wordScreen.EnableScreen();
@@ -150,16 +159,20 @@ public class GameManager : MonoBehaviour
     public void WinGame()
     {
         WinGameMenu.SetActive(true);
-        WinGameMessage.text = "You win!\nChaos Level: " + chaosLevel + "\nTime Remaining" + timeRemaining + "\nScore: " + ((100-chaosLevel) + timeRemaining);
+        WinGameMessage.text = "You win!\nChaos Level: " + chaosLevel + "\nTime Remaining: " + timeRemaining + "\nScore: " + ((100-chaosLevel) + timeRemaining);
         GameManager.Instance.gameOver = true;
     }
 
     public void PauseGame()
     {
-	if(!canPause) 
-	{
-            return;
-	}
+	    if(!canPause) 
+	    {
+                return;
+	    }
+        if(!hasStarted)
+        {
+            phoneMonologueSource.Pause();
+        }
         isPaused = true;
         PauseMenu.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
@@ -174,6 +187,10 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        if (!hasStarted)
+        {
+            phoneMonologueSource.UnPause();
+        }
         player.GetComponent<AILerp>().enabled = true;
         foreach (GameObject enemy in enemies)
         {

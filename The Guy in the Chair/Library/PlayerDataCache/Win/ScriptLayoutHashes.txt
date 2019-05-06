@@ -1,6 +1,6 @@
 Win
 PlayerPath?
-C:/Users/nmirchandani/Desktop/The-Guy-in-the-Chair/The Guy in the Chair/Builds/The Guy in the Chair.exe
+C:/Users/nicho/Desktop/Git Projects/The-Guy-in-the-Chair/The Guy in the Chair/Builds/The Guy in the Chair.exe
 SceneListBegin?
 Assets/Scenes/Main Menu.unity
 Assets/Scenes/Level 1.unity
@@ -163,6 +163,7 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 e7af7273c8177a5779551d022b323d84 AstarPathfindingProject.dll:Pathfinding.RaycastModifier
 510fefd6a544e16a3ffefa557ddcba39 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
 68b99d127fd0c3ab6e5e74ae6ea5f744 AstarPathfindingProject.dll:Pathfinding.Examples.MineBotAnimation
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.AlphaTesting
 aa82b3ce4c0c9b227036c0337315c5d3 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 e51c09a4cc447f11db225afcd8e3e490 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 aad28fddc50bc37a27ea8fca3e489b0b Assembly-CSharp.dll:.DeadBody
@@ -197,7 +198,7 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 607ec805afd8d80d43f15ef06639440f AstarPathfindingProject.dll:Pathfinding.BlockManager
 573b2e12afebe5bbae5aed28f6f8acb5 Assembly-CSharp.dll:.EnemyChase
 427e4ae6223362877cde7ac01baa97c3 AstarPathfindingProject.dll:Pathfinding.NodeLink3
-7882243f86809c8a21bf5227c27e7d51 Assembly-CSharp.dll:.GameManager
+2ed828f91a97f5ad368ab76f2047cdb1 Assembly-CSharp.dll:.GameManager
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TileClicking
 2fde15209800c4e94cf99bcad8981a24 AstarPathfindingProject.dll:Pathfinding.Examples.ProceduralWorld
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
@@ -210,4 +211,3 @@ c0e31dd31c35455f422978da26bb908a AstarPathfindingProject.dll:Pathfinding.Patrol
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 db9051796aa7286a94629912c13c6af8 Assembly-CSharp.dll:.WordGame
 442021b6c3b6c8197d59817d12f60292 Assembly-CSharp.dll:.PlayerManager
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.AlphaTesting
