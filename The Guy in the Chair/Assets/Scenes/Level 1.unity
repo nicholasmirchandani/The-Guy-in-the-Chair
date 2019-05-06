@@ -29151,7 +29151,7 @@ MonoBehaviour:
   wadesCount: 5
   collectibles: 0
   collectiblesRequired: 6
-  timeRemaining: 240
+  timeRemaining: 300
   totalScore: 0
   player: {fileID: 1410287202}
   tracker: {fileID: 1620765901}
