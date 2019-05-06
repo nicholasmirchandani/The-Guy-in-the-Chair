@@ -23,6 +23,14 @@ public class CameraLook : MonoBehaviour
         {
             x += 5 * Input.GetAxis("Mouse X");
             y += 5 * Input.GetAxis("Mouse Y");
+            if(y >= 90)
+            {
+                y = 90;
+            }
+            else if (y <= -90)
+            {
+                y = -90;
+            }
             mainCamera.transform.eulerAngles = new Vector3(-y, x, 0);
         }
     }
