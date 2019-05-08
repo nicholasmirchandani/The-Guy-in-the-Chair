@@ -12,6 +12,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject bodyBeingCarried;
     public Action queuedAction;
 
+    private GraphNode currentNode;
+    private GraphNode previousNode;
+
     public enum Action {
         NONE,
         PICKUP_BODY,
@@ -32,7 +35,13 @@ public class PlayerManager : MonoBehaviour
         {
             if(isTracking)
             {
-                GetComponent<IAstarAI>().SearchPath();
+                currentNode = AstarPath.active.GetNearest(GameManager.Instance.player.transform.position).node;
+                if (previousNode != currentNode)
+                {
+                    GetComponent<IAstarAI>().SearchPath();
+                }
+                previousNode = AstarPath.active.GetNearest(GameManager.Instance.player.transform.position).node;
+
             }
         }
     }

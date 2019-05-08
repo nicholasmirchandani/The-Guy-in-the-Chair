@@ -32,7 +32,7 @@ public class StealthKill : MonoBehaviour
             Tile tile = (Tile)GameManager.Instance.tilemap.GetTile(position);
 
             //If you didn't click on the hitbox, move as normal
-            if(Physics2D.OverlapCircle(new Vector2(position.x, position.y), 0.1f, layerMask) == null)
+            if(Physics2D.OverlapCircle(new Vector2(position.x, position.y), 0.6f, layerMask) == null)
             {
                 if (tile != null)
                 {
@@ -49,7 +49,7 @@ public class StealthKill : MonoBehaviour
             else
             {
                 GameManager.Instance.tracker.SetActive(true);
-                GameManager.Instance.tracker.transform.position = position + new Vector3(0.5f, 0.5f, -5);
+                GameManager.Instance.tracker.transform.position = this.gameObject.transform.position + new Vector3(0, 0, -5);
                 GameManager.Instance.tracker.transform.parent = this.gameObject.transform;
                 PlayerManager.Instance.isTracking = true;
                 Debug.Log("TRACKING IS A GO!");
