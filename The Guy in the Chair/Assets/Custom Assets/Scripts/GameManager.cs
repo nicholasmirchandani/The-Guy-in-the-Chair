@@ -161,7 +161,7 @@ public class GameManager : MonoBehaviour
     public void WinGame()
     {
         WinGameMenu.SetActive(true);
-        WinGameMessage.text = "You win!\nChaos Level: " + chaosLevel + "\nTime Remaining: " + timeRemaining + "\nScore: " + ((100-chaosLevel) + timeRemaining);
+        WinGameMessage.text = "You win!\nChaos Level: " + chaosLevel + "\nTime Remaining: " + timeRemaining + "\nScore: " + ((100-chaosLevel) * 2 + timeRemaining);
         GameManager.Instance.gameOver = true;
     }
 

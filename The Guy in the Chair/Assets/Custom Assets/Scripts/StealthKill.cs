@@ -43,7 +43,7 @@ public class StealthKill : MonoBehaviour
                     }
                     GameManager.Instance.tracker.SetActive(true);
                     GameManager.Instance.tracker.transform.position = position + new Vector3(0.5f, 0.5f, -5);
-                    GameManager.Instance.playerAI.SearchPath();
+                    PlayerManager.Instance.needsUpdate = true;
                 }
             }
             else

@@ -45,6 +45,7 @@ public class HackableDoor : MonoBehaviour
         GetComponent<BoxCollider2D>().enabled = false;
         AStar.GetComponent<AstarPath>().UpdateGraphs(GetComponent<BoxCollider2D>().bounds);
         --GameManager.Instance.electricityLevel;
+        PlayerManager.Instance.needsUpdate = true;
     }
 
 }

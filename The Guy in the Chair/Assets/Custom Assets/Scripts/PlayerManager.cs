@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Instance;
     public bool isHidden;
     public bool isTracking; //is tracking enemy for stealth kill
+    public bool needsUpdate; //Needs update from destination change in TileClicking/Cover/Winzone/Collectible/Stairs/StealthKill
     public bool isCarryingBody;
     public GameObject bodyBeingCarried;
     public Action queuedAction;
@@ -33,12 +34,13 @@ public class PlayerManager : MonoBehaviour
     {
         if(Time.frameCount % 5 == 0)
         {
-            if(isTracking)
+            if(isTracking || needsUpdate)
             {
                 currentNode = AstarPath.active.GetNearest(GameManager.Instance.player.transform.position).node;
                 if (previousNode != currentNode)
                 {
                     GetComponent<IAstarAI>().SearchPath();
+                    needsUpdate = false;
                 }
                 previousNode = AstarPath.active.GetNearest(GameManager.Instance.player.transform.position).node;
 

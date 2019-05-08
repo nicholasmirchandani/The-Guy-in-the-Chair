@@ -148,7 +148,7 @@ public class Cover : MonoBehaviour
                 PlayerManager.Instance.queuedAction = PlayerManager.Action.NONE;
                 GameManager.Instance.tracker.SetActive(false);
                 GameManager.Instance.tracker.transform.position = GameManager.Instance.player.transform.position;
-                GameManager.Instance.playerAI.SearchPath();
+                PlayerManager.Instance.needsUpdate = true;
                 break;
             }
             yield return new WaitForSeconds(0.1f);
