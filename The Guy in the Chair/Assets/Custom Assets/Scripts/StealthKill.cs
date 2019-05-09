@@ -48,6 +48,10 @@ public class StealthKill : MonoBehaviour
             }
             else
             {
+                if (PlayerManager.Instance.needsUpdate)
+                {
+                    PlayerManager.Instance.needsUpdate = false;
+                }
                 GameManager.Instance.tracker.SetActive(true);
                 GameManager.Instance.tracker.transform.position = this.gameObject.transform.position + new Vector3(0, 0, -5);
                 GameManager.Instance.tracker.transform.parent = this.gameObject.transform;
