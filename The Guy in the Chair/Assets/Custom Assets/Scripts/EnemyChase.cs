@@ -18,12 +18,15 @@ public class EnemyChase : MonoBehaviour
     private int currentPatrolIndex;
     private Transform currentPatrolPoint;
 
+    private Animator anim;
+
     int layerMask;
 
 
     private void Start()
     {
         ai = GetComponent<IAstarAI>();
+        anim = GetComponentInChildren<Animator>();
         currentPatrolIndex = 0;
         searchForPlayer = false;
         layerMask = LayerMask.GetMask("Player", "Wall", "Body");
@@ -31,6 +34,14 @@ public class EnemyChase : MonoBehaviour
 
     private void Update()
     {
+        if (ai.reachedEndOfPath)
+        {
+            anim.SetBool("isMoving", false);
+        }
+        else
+        {
+            anim.SetBool("isMoving", true);
+        }
         if (searchForPlayer && ai.reachedEndOfPath)
         {
             //Some sort of searching script

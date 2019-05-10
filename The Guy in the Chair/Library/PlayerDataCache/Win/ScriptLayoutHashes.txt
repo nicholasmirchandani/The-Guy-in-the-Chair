@@ -210,4 +210,4 @@ c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 c0e31dd31c35455f422978da26bb908a AstarPathfindingProject.dll:Pathfinding.Patrol
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 db9051796aa7286a94629912c13c6af8 Assembly-CSharp.dll:.WordGame
-442021b6c3b6c8197d59817d12f60292 Assembly-CSharp.dll:.PlayerManager
+95b4ba285ab01ce4aca49141521c3169 Assembly-CSharp.dll:.PlayerManager
