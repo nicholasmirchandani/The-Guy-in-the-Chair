@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour
     {
         if(Time.frameCount % 5 == 0)
         {
-            if(isTracking || needsUpdate)
+            if(isTracking)
             {
                 currentNode = AstarPath.active.GetNearest(GameManager.Instance.player.transform.position).node;
                 if (previousNode != currentNode)
@@ -44,6 +44,11 @@ public class PlayerManager : MonoBehaviour
                 }
                 previousNode = AstarPath.active.GetNearest(GameManager.Instance.player.transform.position).node;
 
+            }
+            else if (needsUpdate)
+            {
+                GetComponent<IAstarAI>().SearchPath();
+                needsUpdate = false;
             }
         }
     }
