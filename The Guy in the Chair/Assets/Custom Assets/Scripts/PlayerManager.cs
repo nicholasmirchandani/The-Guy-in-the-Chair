@@ -15,6 +15,7 @@ public class PlayerManager : MonoBehaviour
 
     private GraphNode currentNode;
     private GraphNode previousNode;
+    private Animator anim;
 
     public enum Action {
         NONE,
@@ -27,12 +28,22 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         Instance = this;
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Time.frameCount % 5 == 0)
+        if (GameManager.Instance.playerAI.reachedEndOfPath)
+        {
+            anim.SetBool("isMoving", false);
+        }
+        else
+        {
+            anim.SetBool("isMoving", true);
+        }
+
+        if (Time.frameCount % 5 == 0)
         {
             if(isTracking)
             {
